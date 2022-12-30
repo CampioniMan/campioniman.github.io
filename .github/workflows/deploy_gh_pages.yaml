@@ -27,14 +27,14 @@ jobs:
         with:
           node-version: '16'
 
+      - run: npm init
+
       - name: Install npm dependencies
         run: |
           npm install npm@latest -g
           npm install postcss -D
           npm install -g postcss-cli
           npm install -g autoprefixer
-      
-      - run: npm init
 
       - name: Build
         run: hugo --minify
