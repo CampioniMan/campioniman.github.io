@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: '16'
 
-      - run: npm install
+      - run: npm install@latest -g
 
       - name: Build
         run: hugo --minify
