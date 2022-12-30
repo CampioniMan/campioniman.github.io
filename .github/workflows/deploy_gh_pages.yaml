@@ -33,13 +33,7 @@ jobs:
           # https://github.com/actions/setup-node/blob/main/docs/advanced-usage.md#caching-packages-data
           cache-dependency-path: '**/package-lock.json'
 
-      - name: Instll Dependencies
-        run: |
-          if [ -e package-lock.json ]; then
-          npm ci
-          else
-          npm i
-          fi
+      - run: npm ci
 
       - name: Build
         run: hugo --minify
