@@ -30,8 +30,8 @@ jobs:
       - name: Install dependencies
         run: |
           npm install postcss -D
-          npm install -g postcss-cli
-          npm install -g autoprefixer
+          npm install postcss-cli
+          npm install autoprefixer
           npm install postcss-import
           npm install tailwindcss
 
