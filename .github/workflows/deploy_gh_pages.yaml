@@ -33,7 +33,7 @@ jobs:
           npm install postcss-cli
           npm install autoprefixer
           npm install postcss-import
-          npm install tailwindcss
+          npm install tailwindcss -D
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
