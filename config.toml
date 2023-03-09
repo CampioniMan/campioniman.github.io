@@ -1,6 +1,6 @@
 baseurl = "https://campioniman.github.io/"
 metaDataFormat = "yaml"
-title = "Campioni!"
+title = "Campioni! (WIP)"
 theme = "blist"
 
 DefaultContentLanguage = "en"
@@ -12,7 +12,7 @@ DefaultContentLanguageInSubdir = true
     languageName = "English"
     [languages.en.params]
       introTitle = "Hey! I'm Daniel Campioni"
-      introSubtitle = "22 y/o game developer who enjoys Rocket League, The Office and badminton"
+      introSubtitle = "22 y/o game developer who enjoys Rocket League, The Office and badminton.\nThis blog is still a work in progress."
       introPhoto = "/me.jpeg"
       logo = "/thumb.png"
     [[languages.en.menu.main]]
