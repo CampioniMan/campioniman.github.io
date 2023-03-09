@@ -11,10 +11,10 @@ DefaultContentLanguageInSubdir = true
     weight = 1
     languageName = "English"
     [languages.en.params]
-      introTitle = "Hey! I'm Katheryn Fox"
-      introSubtitle = "26 y/o junior developer who enjoys social card games, blogging and painting"
-      introPhoto = "/picture.jpg"
-      logo = "/blist-logo.png"
+      introTitle = "Hey! I'm Daniel Campioni"
+      introSubtitle = "22 y/o game developer who enjoys Rocket League, The Office and badminton"
+      introPhoto = "/me.jpeg"
+      logo = "/thumb.png"
     [[languages.en.menu.main]]
         name = "Blog"
         url = "blog"
@@ -110,8 +110,8 @@ DefaultContentLanguageInSubdir = true
 
 [params.homepage.social]
   # Global params common for both languages
-  title = "Follow me"
-  description = "I work on everything coding and tweet developer memes"
+  title = "Get in touch!"
+  description = "Here is my contact info"
 
   [[params.homepage.social.icons]]
     website = "linkedin"
@@ -119,6 +119,9 @@ DefaultContentLanguageInSubdir = true
   [[params.homepage.social.icons]]
     website = "github"
     url = "https://github.com/CampioniMan"
+  [[params.homepage.social.icons]]
+    website = "email"
+    url = "campioni.daniel@gmail.com"
   #[[params.homepage.social.icons]]
   #  website = "twitter"
   #  url = "https://twitter.com/"
