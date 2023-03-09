@@ -11,8 +11,20 @@ draft: true
 Whenever you start a new Unity project you usually already have some codebase which to build upon, mostly with "Utils" classes/files. In this post I'll talk about a simple one I have implemented for some personal projects of mine, more specifically a translation system (or a Location Provider) using a Google Sheet as the main database.
 
 ## Requirements
-- Unity 2022+ with an account
-- Google account
+- Unity 2022+ with an account (might work on 2021 & 2020, but I didn't test);
+- Google account.
+
+## The whole proccess
+Let's start by defining which project will be the one to have this new system implementation (new project or an already existing one), I recommend having a project of yours for all the Utils stuff, this way you can import them as a package in the Package Manager. You can also have them separately which is more theoretically correct, but this might be harder to maintain since you'll need to keep checking the repo's name & version of every single package when importing them using the Package Manager.
+
+### The third-party software
+Now we'll import the third-party software we need into our project: [This](https://assetstore.unity.com/packages/tools/utilities/google-sheets-to-unity-73410) nice package from the Asset Store is free and enables us to get data from a Google Sheet we have access to, all you need to do is login to your account and get the asset. I'm not gonna go into details about how to setup this package specifically since there's a good enough documentation for you to look at when you download/import the project (in a PDF file).
+
+The only notes I'll add is:
+- Use the private feature instead of making the Sheet public, just to be safe;
+- If there are any erros in the Console Window when you import the project just remove the contents from the folder "Google Sheets to Unity/Scripts/v3/", except the TinyJSON.dll. This folder contains the support for an older version of the Google Sheets API, which you won't need.
+
+### The nitty-gritty
 
 
 ....
