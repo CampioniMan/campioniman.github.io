@@ -12,9 +12,9 @@ DefaultContentLanguageInSubdir = true
     languageName = "English"
     [languages.en.params]
       introTitle = "Hey! I'm Daniel Campioni"
-      introSubtitle = "22 y/o game developer who enjoys Rocket League, The Office and badminton.\nThis blog is still a work in progress."
+      introSubtitle = "22 y/o game developer who enjoys Rocket League, The Office and badminton.<br/>This blog is still a work in progress."
       introPhoto = "/me.jpeg"
-      logo = "/thumb.png"
+      logo = "/thumb_transparent.png"
     [[languages.en.menu.main]]
         name = "Blog"
         url = "blog"
@@ -58,7 +58,7 @@ DefaultContentLanguageInSubdir = true
 
   # Custom copyright - optional
   copyright = "Copyright © 2023 - Daniel Campioni · All rights reserved"
-  favicon = "/thumb.png"
+  favicon = "/thumb_transparent.png"
 
   # Color for the intro details and social links block, not applicable for dark mode
   # Supported values: Any color from TailwindCSS default colors
