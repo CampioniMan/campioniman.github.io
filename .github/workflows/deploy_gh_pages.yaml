@@ -1,38 +1,42 @@
-name: Artifacts Comparison
+name: Deploy to GitHub Pages
 
 on:
+  push:
+    branches: [master]
+    paths:
+      - 'docs/**'
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  node-modules:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v4
-      - run: |
-          npm i react react-dom react-script create-react-app webpack
-      - uses: actions/upload-artifact@v4
-        name: "Upload Node Modules - v4"
+      - name: Checkout your repository using git
+        uses: actions/checkout@v4
+
+      - name: Install, build, and upload your site
+        uses: withastro/action@v3
         with:
-          name: node_modules-v4
-          path: node_modules
-      - uses: actions/download-artifact@v4
-        name: "Download Node Modules - v4"
-        with:
-          name: node_modules-v4
-          path: node_modules-v4
-  big-artifact:
+          path: docs
+          node-version: 20
+          package-manager: npm
+
+  deploy:
+    needs: build
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - run: |
-          dd if=/dev/urandom of=1gb-random bs=1M count=1000
-      - uses: actions/upload-artifact@v4
-        name: "Upload 1GB - v4"
-        with:
-          name: 1gb-v4
-          path: 1gb-random
-          compression-level: 0
-      - uses: actions/download-artifact@v4
-        name: "Download 1GB - v4"
-        with:
-          name: 1gb-v4
-          path: 1gb-v4
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
